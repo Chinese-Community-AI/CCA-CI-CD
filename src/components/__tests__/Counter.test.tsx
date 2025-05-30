@@ -20,4 +20,18 @@ describe("Counter", () => {
     fireEvent.click(decrementButton);
     expect(screen.getByText("Counter: -1")).toBeInTheDocument();
   });
+
+  it("resets count to 0 when reset button is clicked", () => {
+    render(<Counter />);
+    const incrementButton = screen.getByText("Increment");
+    const resetButton = screen.getByText("Reset");
+
+    // First increment to 1
+    fireEvent.click(incrementButton);
+    expect(screen.getByText("Counter: 1")).toBeInTheDocument();
+
+    // Then reset to 0
+    fireEvent.click(resetButton);
+    expect(screen.getByText("Counter: 0")).toBeInTheDocument();
+  });
 });
