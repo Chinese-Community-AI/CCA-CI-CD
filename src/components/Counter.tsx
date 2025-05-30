@@ -16,6 +16,12 @@ export default function Counter() {
           Decrement
         </button>
         <button
+          onClick={() => setCount(0)}
+          className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
+        >
+          Reset
+        </button>
+        <button
           onClick={() => setCount(count + 1)}
           className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
         >
